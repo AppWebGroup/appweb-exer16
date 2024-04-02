@@ -33,8 +33,8 @@ Cela permet aussi d'eviter le DRY en programmation
 
 ### Séparation du code
 
-Essayer d'intégrer dans des fichiers à part les fonctions qui ont pour but d'interroger le serveur. 
-Par exemple, fetchSongs() et fetchArtists() dans un fichier songService.
+Une très bonne spéparation de code en utilisnt des commes fonctions fetchSong et Artists. 
+
 
 ```songService.ts
 
@@ -59,6 +59,9 @@ async function fetchArtists() {
 }
 
 ```
+
+Essayer d'intégrer dans des fichiers à part les fonctions qui ont pour but d'interroger le serveur. 
+Par exemple, fetchSongs() et fetchArtists() dans un fichier songService.
 
 ## Belle gestion des erreurs
 
