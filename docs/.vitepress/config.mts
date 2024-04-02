@@ -8,15 +8,25 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Code', link: '/andry-ravelomanantsoa#code' },
+      { text: 'Autres', link: '/andry-ravelomanantsoa#autres' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Code',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Lisibilité du code'},
+          { text: 'Conformité du code aux bonnes pratiques de programmation'},
+          { text: 'Conformité du code aux normes et standards de programmation' }
+
+        ]
+      },
+      {
+        text: 'Autres',
+        items: [
+          { text: 'Considération de la sécurité' },
+          { text: `Suggestions d'amélioration de l'algorithme`}
         ]
       }
     ],

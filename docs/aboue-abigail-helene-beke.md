@@ -4,7 +4,6 @@ outline: deep
 
 # Revue de Code Tp1 Aboue Abigail Helene Beke
 
-
 [GitHub-project-link](https://github.com/abihelene2/TP1_Audio_AbigailBeke.git)
 
 
@@ -31,9 +30,10 @@ function toHideAudio(elementToHide: any): void
 Cela permet aussi d'eviter le DRY en programmation 
 ( en appelant à chaque fois la fonction au lieu de reécrire à chaque fois l'élement à ajouter ou à supprimer)
 
+
 ### Séparation du code
 
-Une très bonne spéparation de code en utilisnt des commes fonctions fetchSong et Artists. 
+Une très bonne séparation de code en utilisnt des commes fonctions fetchSong et Artists. 
 
 
 ```songService.ts
@@ -58,6 +58,8 @@ async function fetchArtists() {
   return artists;
 }
 
+
+
 ```
 
 Essayer d'intégrer dans des fichiers à part les fonctions qui ont pour but d'interroger le serveur. 
@@ -75,4 +77,4 @@ if (!response.ok) {
 
 ```
 
-Dans l'ensemble, le travail pratique est très bien codé. Un très beau Tp!
+Dans l'ensemble, le travail pratique est très bien fait. Un très beau Tp!
