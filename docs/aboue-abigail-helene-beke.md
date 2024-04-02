@@ -6,52 +6,75 @@ outline: deep
 
 [GitHub-project-link](https://github.com/abihelene2/TP1_Audio_AbigailBeke.git)
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
+Cette page montre la revue de code sur le TP1 ( Audio Song Player )
+
+## Niveau Code
+### Lisibilité et clarté
+
+Dans le code partagé du TP1 par Abigail, le code est très clair et présente une facilité à lire. 
+L'utilisation de petites fonctions qui font chacuns leurs tâches permet une plus grande facilité d'adpatation :
 
 ```md
-<script setup>
-import { useData } from 'vitepress'
 
-const { theme, page, frontmatter } = useData()
-</script>
+function toShowAudio(elementToShow: any): void 
+{
+    elementToShow.remove("d-none")
+}
 
-## Results
+function toHideAudio(elementToHide: any): void 
+{
+    elementToHide.add("d-none")
+}
+```
+Cela permet aussi d'eviter le DRY en programmation 
+( en appelant à chaque fois la fonction au lieu de reécrire à chaque fois l'élement à ajouter ou à supprimer)
 
-### Theme Data
 
-<pre>{{ theme }}</pre>
+### Séparation du code
 
-### Page Data
+Une très bonne séparation de code en utilisnt des commes fonctions fetchSong et Artists. 
 
-<pre>{{ page }}</pre>
 
-### Page Frontmatter
+```songService.ts
 
-<pre>{{ frontmatter }}</pre>
+// Dans un fichier songService ou dans ce genre
+
+async function fetchArtists() {
+  let response = await fetch("http://localhost:3000/artists");
+  if (!response.ok) {
+    throw new Error(`HTTP error! list artists Status: ${response.status}`);
+  }
+  let artists = await response.json();
+  return artists;
+}
+
+async function fetchArtists() {
+  let response = await fetch("http://localhost:3000/artists");
+  if (!response.ok) {
+    throw new Error(`HTTP error! list artists Status: ${response.status}`);
+  }
+  let artists = await response.json();
+  return artists;
+}
+
+
+
 ```
 
-<script setup>
-import { useData } from 'vitepress'
+Essayer d'intégrer dans des fichiers à part les fonctions qui ont pour but d'interroger le serveur. 
+Par exemple, fetchSongs() et fetchArtists() dans un fichier songService.
 
-const { site, theme, page, frontmatter } = useData()
-</script>
+## Belle gestion des erreurs
 
-## Results
+La gestion des erreurs n'est point négligé dans son travail pratique. 
+En effet, lancer des exceptions dans le cas échéant où la requête n'est pas valide
 
-### Theme Data
+```
+if (!response.ok) {
+  throw new Error(`HTTP error! list artists Status: ${response.status}`);
+}
 
-<pre>{{ theme }}</pre>
+```
 
-### Page Data
-
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-
-<pre>{{ frontmatter }}</pre>
-
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+Dans l'ensemble, le travail pratique est très bien fait. Un très beau Tp!
